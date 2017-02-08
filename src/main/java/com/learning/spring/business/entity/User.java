@@ -3,7 +3,7 @@ package com.learning.spring.business.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-//TODO: entity nie będzie w pakiecie biznesowym, będziemy je po prostu w entity
+//TODO: entity nie będzie w pakiecie biznesowym, będziemy to po prostu w entity
 /**
  * Created by Beata Kalis on 2017-02-08.
  */
