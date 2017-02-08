@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.*;
 @SpringBootApplication
 public class Application {
 
+	//Rozwiązanie prawie dobre, wyodrębnij to do odzielnnej klasy, Spróbuj wykorzystać @RequestMapping do pozbycia się (/hello) z
+	//każdej metody
 	@RestController
 	public class MyController {
+		
+		// Zrób jak Beti by było world i parametry w jednym
 		@RequestMapping(path = "/hello", method = RequestMethod.GET)
 		public String hello() {
 			return "Hello Word!";
@@ -27,6 +31,7 @@ public class Application {
 			return "Hello "+zmienna+" "+zmienna2;
 		}
 
+		// Dorzuć kontroę błędów i będzie ok :)
 		@RequestMapping(path = "/task/second", method =RequestMethod.GET)
 		public String method3(@RequestParam (value="name", defaultValue = "World") String zmienna) {
 			int repeat = Integer.parseInt(zmienna);
