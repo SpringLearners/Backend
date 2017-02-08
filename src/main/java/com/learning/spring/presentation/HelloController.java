@@ -2,9 +2,12 @@ package com.learning.spring.presentation;
 
 import org.springframework.web.bind.annotation.*;
 
+// TODO: Nie wrzucamy takich podpisów, usuwaj je
 /**
  * Created by Beata Kalis on 2017-02-06.
  */
+
+//TODO: Pomyśl czy nie da się czegoś w tej klasie ulepszyć, może @Request Mapping? :) 
 @RestController
 public class HelloController {
 
