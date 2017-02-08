@@ -11,16 +11,16 @@ public class SupriseController {
     @RequestMapping(path = "/task/second", method = RequestMethod.GET)
     public String method3(@RequestParam(value = "name", defaultValue = "1") String zmienna) {
         int repeat;
-        try{
+        try {
             repeat = Integer.parseInt(zmienna);
-        }catch(NumberFormatException e){
-            repeat =1;
+        } catch (NumberFormatException e) {
+            repeat = 1;
         }
         String out = "l";
 
-           for (int i = 0; i <= repeat; i++) {
-               out += "o";
-           }
+        for (int i = 0; i <= repeat; i++) {
+            out += "o";
+        }
 
         out += "ng word";
         return out;
