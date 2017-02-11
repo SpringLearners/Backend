@@ -1,6 +1,6 @@
 package com.learning.spring.business;
 
-import com.learning.spring.User;
+import com.learning.spring.entity.User;
 
 public interface UserService {
 

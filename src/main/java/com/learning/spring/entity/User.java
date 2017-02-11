@@ -1,4 +1,4 @@
-package com.learning.spring;
+package com.learning.spring.entity;
 
 public class User {
 

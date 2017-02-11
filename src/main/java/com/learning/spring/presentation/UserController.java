@@ -1,7 +1,7 @@
 package com.learning.spring.presentation;
 
-import com.learning.spring.User;
 import com.learning.spring.business.UserService;
+import com.learning.spring.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
