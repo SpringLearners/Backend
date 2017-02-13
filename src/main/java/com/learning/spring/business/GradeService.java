@@ -1,12 +1,17 @@
 package com.learning.spring.business;
 
+import com.learning.spring.entity.Grade;
+
 import java.util.List;
 
 public interface GradeService {
 
-    public Double calculateAverage(List<Double> grades);
+    Double calculateAverage(List<Grade> grades);
 
-    public Double findMinGrade(List<Double> grade);
+    Grade findMinGrade(List<Grade> grade);
 
-    public Double findMaxGrade(List<Double> grade);
+    Grade findMaxGrade(List<Grade> grade);
+
+    List<Grade> sortGrades(List<Grade> grades);
+
 }
