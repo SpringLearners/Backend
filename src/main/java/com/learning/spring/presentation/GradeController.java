@@ -15,26 +15,27 @@ public class GradeController {
 
     @Autowired
     private GradeService gradeService;
+    private List<Grade> grades = Arrays.asList(new Grade(1, "AK", 5, 5D), new Grade(2, "SO", 4, 4D),
+            new Grade(3, "AK2", 5, 4.5));
 
     @RequestMapping(path = "/average")
     public Double average() {
-        return gradeService.calculateAverage(Arrays.asList(new Grade(1, "AK", 5, 5D), new Grade(2, "AK2", 5, 4.5)));
+        return gradeService.calculateAverage(grades);
     }
 
     @RequestMapping(path = "/min")
     public Grade minGrade() {
-        return gradeService.findMinGrade(Arrays.asList(new Grade(1, "AK", 5, 5D), new Grade(2, "AK2", 5, 4.5)));
+        return gradeService.findMinGrade(grades);
     }
 
     @RequestMapping(path = "/max")
     public Grade maxGrade() {
-        return gradeService.findMaxGrade(Arrays.asList(new Grade(1, "AK", 5, 5D), new Grade(2, "AK2", 5, 4.5)));
+        return gradeService.findMaxGrade(grades);
     }
 
     @RequestMapping(path = "/sortGrades")
     public List<Grade> sortGrades() {
-        return gradeService.sortGrades(Arrays.asList(new Grade(1, "AK", 5, 5D), new Grade(2, "SO", 4, 4D),
-                new Grade(3, "AK2", 5, 4.5)));
+        return gradeService.sortGrades(grades);
     }
 
 }
