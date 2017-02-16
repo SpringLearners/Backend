@@ -5,6 +5,7 @@ import com.learning.spring.entity.Student;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,11 +31,15 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student findBestStudent(List<Student> students) {
+    public List<Student> findBestStudent(List<Student> students) {
         if (CollectionUtils.isEmpty(students)) {
             return null;
         }
 
-        return students.stream().max((o1, o2) -> o1.getAverage().compareTo(o2.getAverage())).get();
+        List<Student> bestStudents = new ArrayList<>();
+        Student best = students.stream().max((o1, o2) -> o1.getAverage().compareTo(o2.getAverage())).get();
+        bestStudents.addAll(students.stream().filter(s -> s.getAverage().equals(best.getAverage())).collect(Collectors.toList()));
+
+        return bestStudents;
     }
 }

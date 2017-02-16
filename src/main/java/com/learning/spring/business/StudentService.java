@@ -11,6 +11,6 @@ public interface StudentService {
 
     List<Student> sortByName(List<Student> students);
 
-    Student findBestStudent(List<Student> students);
+    List<Student> findBestStudent(List<Student> students);
 
 }

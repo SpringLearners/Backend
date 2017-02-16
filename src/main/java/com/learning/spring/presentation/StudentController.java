@@ -33,7 +33,7 @@ public class StudentController {
     }
 
     @RequestMapping(path = "/findBestStudent")
-    public Student findBestStudent() {
+    public List<Student> findBestStudent() {
         return studentService.findBestStudent(students);
     }
 }

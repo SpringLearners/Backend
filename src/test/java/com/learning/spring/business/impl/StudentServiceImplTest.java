@@ -9,6 +9,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -72,14 +73,14 @@ public class StudentServiceImplTest {
     public void findBestStudent() throws Exception {
 
         // given
-        Student studentExpected = new Student("Kontek Grzesiek", new ArrayList<>(), 5.5, 1);
+        List<Student> studentExpected = Collections.singletonList(new Student("Kontek Grzesiek", new ArrayList<>(), 5.5, 1));
 
 
         // when
-        Student studentResult = studentService.findBestStudent(students);
+        List<Student> studentResult = studentService.findBestStudent(students);
 
         // then
-        assertEquals(studentExpected.getName(), studentResult.getName());
+        assertEquals(studentExpected.get(0).getName(), studentResult.get(0).getName());
 
     }
 
