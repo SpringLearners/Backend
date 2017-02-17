@@ -14,4 +14,12 @@ public interface GradeService {
 
     List<Grade> sortGrades(List<Grade> grades);
 
+    int addGrade(Grade grade);
+
+    int updateGrade(Grade grade);
+
+    Grade getGrade(Integer id);
+
+    int deleteGrade(Integer id);
+
 }

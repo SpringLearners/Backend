@@ -1,6 +1,7 @@
 package com.learning.spring.business.impl;
 
 import com.learning.spring.business.GradeService;
+import com.learning.spring.database.DatabaseManager;
 import com.learning.spring.entity.Grade;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class GradeServiceImpl implements GradeService {
+
+    DatabaseManager manager = new DatabaseManager();
 
     @Override
     public Double calculateAverage(List<Grade> grades) {
@@ -47,5 +50,25 @@ public class GradeServiceImpl implements GradeService {
             return null;
         }
         return grades.stream().sorted((o1, o2) -> o1.getGrade().compareTo(o2.getGrade())).collect(Collectors.toList());
+    }
+
+    @Override
+    public int addGrade(Grade grade) {
+        return manager.addGrade(grade);
+    }
+
+    @Override
+    public int updateGrade(Grade grade) {
+        return manager.updateGrade(grade);
+    }
+
+    @Override
+    public Grade getGrade(Integer id) {
+        return manager.getGradeById(id);
+    }
+
+    @Override
+    public int deleteGrade(Integer id) {
+        return manager.deleteGrade(id);
     }
 }

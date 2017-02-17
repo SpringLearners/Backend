@@ -38,4 +38,26 @@ public class GradeController {
         return gradeService.sortGrades(grades);
     }
 
+    @RequestMapping(path = "/add")
+    public int addGrade() {
+        Grade grade = new Grade(1, "AK", 5, 4.5);
+        return gradeService.addGrade(grade);
+    }
+
+    @RequestMapping(path = "/update")
+    public int updateGrade() {
+        Grade grade = new Grade(1, "AK", 5, 5.5);
+        return gradeService.updateGrade(grade);
+    }
+
+    @RequestMapping(path = "/get")
+    public Grade getGrade() {
+        return gradeService.getGrade(1);
+    }
+
+    @RequestMapping(path = "/delete")
+    public int deleteGrade() {
+        return gradeService.deleteGrade(1);
+    }
+
 }

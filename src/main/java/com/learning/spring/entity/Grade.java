@@ -8,6 +8,9 @@ public class Grade {
     private Integer weight;
     private Double grade;
 
+    public Grade() {
+    }
+
     public Grade(Integer id, String subject, Integer weight, Double grade) {
         this.id = id;
         this.subject = subject;
@@ -31,4 +34,19 @@ public class Grade {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
+    public void setGrade(Double grade) {
+        this.grade = grade;
+    }
 }
