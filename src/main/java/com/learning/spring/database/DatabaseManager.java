@@ -4,15 +4,19 @@ import com.learning.spring.entity.Grade;
 
 import java.sql.*;
 
+// TODO: Raczej używa sie klas zajmujących się obsługą konkretnej encji
 public class DatabaseManager {
+
 
     private Connection connection;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
     public DatabaseManager() {
+
     }
 
+    //TODO: jest taki fajny myk - try( wyrażenia ) { } catch... -> automatycznie zamyka nam wtedy otwarte połączenia
     public int addGrade(Grade grade) {
         try {
             connection = DatabaseConnector.createConnection();
@@ -25,6 +29,7 @@ public class DatabaseManager {
             preparedStatement.execute();
             System.out.println("Insert grade completed");
 
+            // TODO: jeśli wystąpi wyjątek przy result set to możemy pozostawić zamknięte połączenia, raczej robi się to w finally lub w myku
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
                 int id = resultSet.getInt(1);
@@ -35,6 +40,8 @@ public class DatabaseManager {
             }
 
         } catch (SQLException e) {
+            //TODO: printStackTrace się nie używa. A co do SQLException -> obsługuje się go w pewien sposób :)
+            // https://examples.javacodegeeks.com/core-java/sql/handle-sql-exceptions-example/
             e.printStackTrace();
         }
 

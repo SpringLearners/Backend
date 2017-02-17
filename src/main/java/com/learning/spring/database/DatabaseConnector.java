@@ -1,6 +1,5 @@
 package com.learning.spring.database;
 
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -18,6 +17,17 @@ public class DatabaseConnector {
 
     private DatabaseConnector() {
     }
+
+
+    // TODO: dobry pomysł, zazwyczaj jeszcze URL się podaje w takim pliku, a w Springu często także sterownik do obsługi
+
+    /*
+            typwy schemat pliku properties
+            url =
+            driver =
+            user =
+            password =
+     */
 
     public static Connection createConnection() {
         String url = "jdbc:mysql://localhost:3306/spring";
